@@ -34,6 +34,9 @@ ${AWS_REGION}
 text
 EOF
 
+#Install essential build library
+sudo apt-get install build-essential
+
 # Install Hugo
 HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
 mkdir tmp/ && cd tmp/
