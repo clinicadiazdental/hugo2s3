@@ -1,7 +1,7 @@
-FROM nginx:alpine as build
+FROM pahud/awscli-v2:node-lts
 
-RUN apk add --update \
-    wget
+RUN yum update -y && \
+    yum install -y curl jq
 
 COPY entrypoint.sh /
 
