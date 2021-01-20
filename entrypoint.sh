@@ -45,7 +45,6 @@ hugo version || exit 1
 
 # Build
 if [ "$MINIFY" = "true" ]; then
-  hugo mod init github.com/dgltc/gonzalez.com.es
   hugo --minify
 else
   hugo
