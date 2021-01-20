@@ -45,8 +45,7 @@ hugo version || exit 1
 
 # Build
 if [ "$MINIFY" = "true" ]; then
-  git submodule add https://github.com/forestryio/hugo-theme-novela
-  hugo --minify
+  hugo --gc --minify
 else
   hugo
 fi
