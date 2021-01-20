@@ -35,7 +35,7 @@ text
 EOF
 
 #Install golang
-wget https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz | tar -xvzf-
+curl -sSL https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz | tar -xvzf-
 mv go /usr/local  
 export GOROOT=/usr/local/go
 export GOPATH=$HOME
