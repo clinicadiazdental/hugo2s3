@@ -34,8 +34,12 @@ ${AWS_REGION}
 text
 EOF
 
-#Install essential build library
-apt-get install build-essential
+#Install golang
+wget https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz | tar -xvzf-
+mv go /usr/local  
+export GOROOT=/usr/local/go
+export GOPATH=$HOME
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # Install Hugo
 HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
