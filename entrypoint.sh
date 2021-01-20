@@ -34,17 +34,10 @@ ${AWS_REGION}
 text
 EOF
 
-#Install golang
-curl -sSL https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz | tar -xvzf-
-mv go /usr/local  
-export GOROOT=/usr/local/go
-export GOPATH=$HOME
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
 # Install Hugo
 HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
 mkdir tmp/ && cd tmp/
-curl -sSL https://github.com/gohugoio/hugo/releases/download/${HUGO_VERSION}/hugo_extended_${HUGO_VERSION: -6}_Linux-64bit.tar.gz | tar -xvzf-
+wget https://github.com/gohugoio/hugo/releases/download/${HUGO_VERSION}/hugo_extended_${HUGO_VERSION: -6}_Linux-64bit.tar.gz | tar -xvzf-
 mv hugo /usr/local/bin/
 cd .. && rm -rf tmp/
 cd ${GITHUB_WORKSPACE}
