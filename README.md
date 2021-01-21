@@ -1,4 +1,4 @@
-# Hugo S3 Action
+# Hugo S3 Action Fork to deploy to S3
 
 GitHub action to run `hugo deploy` provided there is an S3 target configured in your Hugo repo.
 
@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@master
           
       - name: Deploy site
-        uses: plopcas/hugo-s3-action@v1.3.0
+        uses: dgltc/hugo2s3@v1.6.0
         env:
           AWS_REGION: 'eu-west-2'
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
